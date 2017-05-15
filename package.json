@@ -1,0 +1,20 @@
+{
+  "name": "mario.js",
+  "version": "0.1.0",
+  "description": "Compiles mustache template directories into a json package",
+  "main": "lib/directory-compiler.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha test"
+  },
+  "keywords": [
+    "mustache",
+    "compiler"
+  ],
+  "author": "baccigalupi",
+  "license": "MIT",
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "jshint": "^2.9.4",
+    "mocha": "^3.4.1"
+  }
+}
