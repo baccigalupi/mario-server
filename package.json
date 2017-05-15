@@ -1,6 +1,6 @@
 {
-  "name": "mario.js",
-  "version": "0.1.0",
+  "name": "mario-server",
+  "version": "0.2.0",
   "description": "Compiles mustache template directories into a json package",
   "main": "lib/directory-compiler.js",
   "scripts": {
