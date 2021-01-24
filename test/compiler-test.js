@@ -35,25 +35,30 @@ describe('Compiler', () => {
   });
 
   it('parses sections', () => {
-    let text = 'Hello {{#person}}{{name}}, I see your mustache is {{mustache}}{{/person}}.';
+    let text = '{{#person}}{{name}}, I see your mustache is {{mustache}}{{/person}}.';
     let compiled = compile(text, 'mustachery');
     expect(compiled).toEqual({
       name: 'mustachery',
       tree: [
-        { tags: [], texts: ['Hello '] },
         {
           tags: [
-            {index: 0, name: 'person', type: 2},
-            {index: 1, name: 'name', type: 6},
-            {index: 3, name: 'mustache', type: 6},
-            {index: 4, name: 'person', type: 4}
+            {
+              index: 0, name: 'person', type: 2,
+              tree: {
+                tags: [
+                  {index: 1, name: "name", type: 6},
+                  {index: 3, name: "mustache", type: 6},
+                ],
+                texts: [
+                  "",
+                  "",
+                  ", I see your mustache is ",
+                  ""
+                ]
+              }
+            }
           ],
-
           texts: [
-            '',
-            '',
-            ', I see your mustache is ',
-            '',
             '',
             '.'
           ]
